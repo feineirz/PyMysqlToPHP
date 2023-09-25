@@ -1,0 +1,61 @@
+.text-white {
+    color: white;
+}
+.text-black {
+    color: black;
+}
+.text-red{
+    color: red;
+}
+.text-green {
+    color: green;
+}
+.text-blue {
+    color: blue;
+}
+.text-cyan {
+    color: cyan;
+}
+.text-magenta {
+    color: magenta;
+}
+.text-yellow {
+    color: yellow;
+}
+
+.text-purple {
+    color: purple;
+}
+.text-violet {
+    color: violet;
+}
+.text-pink {
+    color: pink;
+}
+.text-crimson {
+    color: crimson;
+}
+.text-lime {
+    color: lime;
+}
+.text-yellowgreen {
+    color: yellowgreen;
+}
+.text-orange {
+    color: orange;
+}
+.text-goldenrod {
+    color: goldenrod;
+}
+.text-greenyellow {
+    color: greenyellow;
+}
+
+.big-digit {
+    font-size: 60px;
+    color:darkred;
+}
+.footer-content {
+    font-size: 12px;
+    color: slategray;
+}

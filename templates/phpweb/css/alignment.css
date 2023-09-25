@@ -1,0 +1,30 @@
+/* Alignment */
+.pull-left {
+    text-align: left;
+    justify-items: left;
+    justify-content: left;
+}
+
+.pull-center {
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.pull-right {
+    text-align: right;
+    justify-items: right;
+    justify-content: right;
+}
+
+.pull-top {
+    vertical-align: top !important;
+}
+
+.pull-middle {
+    vertical-align: middle !important;
+}
+
+.pull-bottom {
+    vertical-align: bottom !important;
+}

@@ -1,0 +1,99 @@
+#! /usr/bin/env python3
+import sys
+from pathlib import Path
+from colorama import Fore, Back, Style
+import getpass
+
+from helper_functions import *
+from php_class_generator import *
+from php_web_generator import *
+from mysql_database import *
+
+
+def show_help():
+    print(ribbonize())
+    print(ribbonize(content='HELP DOCUMENT'))
+    print(ribbonize())
+    print('''
+    MySQL Class Generator
+
+    Generate JAVA, PHP, C#, VB.NET manipulation Classes and 
+    - Backend managing website (written in PHP)
+    - Backend managing project sourcecode ready to compile (written in JAVA, C#, VB.NET)
+    from MySQL database.
+
+    usage: 
+    classgen [-h <host>] -db <database> [-p <port>] -u <username>
+    classgen -db testdb -u dbadmin
+    classgen -h localhost -db testdb -p 3306 -u dbadmin
+    Generate classes and backend website/project sourcecode from specified database
+    to output directory(~/Output).
+
+    classgen -h
+    classgen --help
+    Show this Help Document
+    ''')
+    print(ribbonize())
+
+
+if __name__ == '__main__':
+    args = sys.argv
+    req_param = [
+        '-db',
+        '-u'
+    ]
+    if len(args) > 1:
+        l_arg = len(args)
+        s_arg = args[1]
+        if l_arg == 2 and (s_arg == '-h' or s_arg == '--help'):
+            show_help()
+        else:
+            for param in req_param:
+                if param not in args:
+                    print(args)
+                    show_help()
+                    break
+
+            try:
+                host = 'localhost' if '-h' not in args else args[args.index('-h')+1]
+                database = args[args.index('-db')+1]
+                port = 3306 if '-p' not in args else int(args[args.index('-p')+1])
+                username = args[args.index('-u')+1]
+                output = str(Path.home())+'/Output' if '-o' not in args else args[args.index('-o')+1]
+                password = getpass.getpass('MySQL Password: ')
+
+                # if '--withlogin' in args:
+                print('''
+*** With Login Parameters ***
+Login Tablename: Name of table that contains username and password fields.
+User Columnname: Name of column that contains username to login.
+Password Columnname: Name of column that contains password to login.
+''')
+                login_tablename = input('Login Tablename: ')
+                login_user_columnname = input('User Columnname: ')
+                login_password_columnname = input('Password Columnname: ')
+                print()
+
+                withlogin_info = WithLoginInfo(login_tablename, login_user_columnname, login_password_columnname)
+                connection_info = MySQLConnectionInfo(host, port, database, username, password)
+                mysql_connector = MySQLConnector(connection_info)
+                prepare_directory_structure(mysql_connector)
+                create_php_classes(mysql_connector, withlogin_info)
+                create_php_web(mysql_connector, withlogin_info)
+                print('\nAll operations successful.\n')
+                hint = '''
+*** Use command
+
+    update_www_<database name> or replace_www_<database name>
+    
+    for copy PHP database manipulation website from Output directory 
+    to /var/www/html on localhost.
+                '''
+                print(hint)
+                
+            finally:
+                pass
+        
+
+    else:
+        show_help()

@@ -1,0 +1,242 @@
+.x-container {
+    width: 94vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.t-container {
+    width: 94vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .x-container{
+        width:600px !important;
+    }
+    .t-container{
+        width: 94vw;
+    }
+}
+
+@media (min-width: 992px) {
+    .x-container{
+        width:900px !important;
+    }
+    .t-container{
+        width: 94vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .x-container{
+        width:1100px !important;
+    }
+}
+
+@media (min-width: 1300px) {
+    .x-container{
+        width:1200px !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .x-container, .t-container{
+        width:1300px !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    .x-container, .t-container{
+        width:1500px !important;
+    }
+}
+
+@media (min-width: 2000px) {
+    .x-container{
+        width:1900px !important;
+    }
+}
+
+body {
+    background-image: url('../images/common_sitebg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+a:link {
+    text-decoration: none;
+    color: #682144;
+}
+a:hover {
+    text-decoration: none;
+    color: #682144;
+}
+a:visited {
+    text-decoration: none;
+    color: #682144;
+}
+
+.dotline-box {
+    border-bottom: gray dotted 1px;
+}
+
+.login-form {
+    width: 400px;
+    background-color: transparent;
+}
+
+.search-container{
+    width: 100%;
+    height: 100%;
+    float: right;
+}
+
+.search-box{
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.inline-label{
+    margin: 0 0 0 5px;
+    padding: 5px 0 5px 0;
+    width: max-content;
+    height: 30px;
+    white-space: nowrap;
+    font-size: small;
+    color: #682144;
+}
+
+.search{
+    width: 100%;
+    border: 2px solid #99004d;
+    border-right: none;
+    padding: 5px;
+    margin-left: 8px;
+    height: 30px;
+    outline: none;
+    color: #99004d;    
+    border-radius: 5px 0 0 5px;
+}
+
+.search-cmb{
+    width: 50%;
+    border: 2px solid #99004d;
+    padding: 5px;
+    margin: 0 0 0 8px;
+    height: 30px;
+    outline: none;
+    color: #99004d;    
+    border-radius: 5px;
+}
+
+.search:focus, .search-cmb:focus{
+    color: #fff;
+    background: #682144;
+    box-shadow: 0 0 5px #682144;
+}
+
+.search-btn{
+    width: 40px;
+    height: 30px;
+    border: 1px solid #99004d;
+    background: #99004d;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+.cmd-btn{
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+
+.left-cmd-btn{
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    outline: none;
+    margin-right: 0px;
+}
+.mid-cmd-btn{
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    border: none;
+    outline: none;
+    margin: 0px;
+}
+.right-cmd-btn{
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    outline: none;
+    margin-left: 0px;
+}
+
+.add-btn{    
+    width: 40px;
+    height: 30px;
+    line-height: 25px;
+    font-size: 14px;
+    justify-items: center;
+    vertical-align: middle;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0 2px 0 2px;
+    outline: none;
+    overflow: hidden;
+}
+
+.input-text{
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding-left: 5px;
+}
+
+.select-text{
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 3px 5px 3px 5px;
+}
+
+.section-header{
+    min-height: max-content;
+    vertical-align: middle;
+}
+
+.common-card{
+    background-image: url('../images/common_card_bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.card-content{
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
